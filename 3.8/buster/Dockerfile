@@ -9,7 +9,7 @@ FROM buildpack-deps:buster
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
-RUN bash -c "echo 'nameserver 10.5.89.14' >> /etc/resolv.conf"
+RUN sudo bash -c "echo 'nameserver 10.5.89.14' >> /etc/resolv.conf"
 
 RUN tail /etc/resolv.conf
 
