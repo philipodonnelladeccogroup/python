@@ -9,6 +9,9 @@ FROM buildpack-deps:buster
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
+RUN cat "nameserver 10.5.89.14" >> /etc/resolv.conf
+RUN tail -nl /etc/resolv.conf
+
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
