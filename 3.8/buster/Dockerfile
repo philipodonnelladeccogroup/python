@@ -10,6 +10,7 @@ FROM buildpack-deps:buster
 ENV PATH /usr/local/bin:$PATH
 
 RUN bash -c "echo 'nameserver 10.5.89.14' >> /etc/resolv.conf"
+
 RUN tail /etc/resolv.conf
 
 # http://bugs.python.org/issue19846
